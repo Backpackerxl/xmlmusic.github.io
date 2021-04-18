@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: rgb(142, 209, 241, 48%);
+}
+
+.box {
+    display:flex;
+    width: 650px !important;
+    background: aliceblue !important;
+    border-radius: 20px !important;
+    margin-top: 20px;
+    border: 2px solid #cee7ff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 20px 20px rgba(95, 23, 101, 0.2);
+}
+.ui.header img {
+    display: flex;
+    height: 40px;
+}
+.ui.header .ui.grid{
+    margin-bottom: -3rem;
+}
+.ui.header {
+    color: #a09f9f;
+    font-weight: 400;
+    text-align: right;
+    
+}
+.ui.header:first-child {
+    margin-top: 0.857143em;
+}
+.ui.header:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    font-size: 0.285714em;
+}
+.ui.medium.header {
+    font-size: 1em;
+}
+.ui.medium.header span label{
+    cursor: pointer;
+}
+.item {
+    text-indent: 2em;
+}
+.item:hover{
+    background: #9efb0847;
+}
+#title {
+    text-align: center !important;
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: 20px;
+    transform: skew(25deg) skew(4deg);
+    color: #fff !important;
+    /*模板字符串拼接CSS样式，营造3维效果*/
+}
+
+#title::before {
+    content: 'Backpackerxl';
+    position: absolute;
+    color: rgba(95, 23, 101, 0.3);
+    filter: blur(25px);
+    z-index: -1;
+    left: 110px;
+    top: 25px;
+}
+
+.ui.input {
+    font-size: 1em;
+    margin-left: 400px !important;
+}
+.ui.input>input{
+    color: #a5a5a5;
+}
+.ui.input>input:hover{
+    color: black;
+}
+#auplay {
+    width: 100%;
+}
+
+.ui.active.button {
+    background-color: #cee7ff;
+    background-image: none;
+    -webkit-box-shadow: 0 0 0 1px transparent inset;
+    box-shadow: 0 0 0 1px transparent inset;
+    color: rgb(253, 4, 4, 95%);
+}
+
+.ui.buttons .button:first-child {
+    border-left: none;
+    margin-left: 0;
+    border-top-left-radius: 1.285714rem;
+    border-bottom-left-radius: 1.285714rem;
+}
+
+.ui.buttons .button:last-child {
+    border-top-right-radius: 1.285714rem;
+    border-bottom-right-radius: 1.285714rem;
+}
+
+#footer {
+    margin-top: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: -5px;
+    color: #a09f9f;
+}
+
+#footer img {
+    display: flex;
+    margin: 0 auto;
+}
+
+#texts {
+    text-align: center;
+}

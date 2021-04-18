@@ -1,0 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.box{
+    margin: 0 auto !important;
+    margin-top: 150px !important;
+}

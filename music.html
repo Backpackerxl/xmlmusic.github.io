@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backpackerxl</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="title">
+            <p>Backpackerxl</p>
+        </div>
+        <div class="ui container box">
+             
+            <div class="ui medium header">
+                <div class="ui stackable grid">
+                    <div class="eleven wide column">
+                        <img src="images/music.png">
+                    </div>
+                    <div class="five wide column">
+                        <button class="ui twitter basic teal button" @click="localhost">
+                            <input type="file" name="file" id="open" style="display: none;" @change = "upload" ref="uploadFile">
+                            <i class="folder open outline icon"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                            播放本地音乐
+                          </font></font></button>
+                    </div>
+                </div>
+                </div>
+            <div class="ui loading search">
+                <div class="ui icon input" style="margin-top: 20px;">
+                    <input class="prompt" type="text" placeholder="Search..." v-model="inputValue"
+                        @keyup.enter="search" @blur="animateWidth('company_name','blur')" @focus="animateWidth('company_name','focus')">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+            <div class="ui relaxed divided list">
+                <div class="item" v-for="(item,index) in Result" :key="index">
+                    <i>{{index+1}}.</i>
+                    <div class="content">
+                        <div class="ui stackable grid">
+                            <div class="eleven wide column">
+                                <a class="header">{{item.name}}</a>
+                                <div class="description">{{item.artists[0].name}}</div>
+
+                            </div>
+                            <div class="two wide column">
+                                <span>{{item.duration}}</span>
+                            </div>
+                            <div class="two wide column">
+                                <div class="ui icon buttons">
+                                    <button class="ui button active" @click="play(item.id)">
+                                        <i class="play icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <audio :src="url" autoplay controls id="auplay"></audio>
+        </div>
+        <div id="footer">
+            <img src="images/favicon.ico">
+            <p id="texts">Backpackerxl Glory products @2020-2021 xmlmusic</p>
+            <p id="texts">{{msg}}</p>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
